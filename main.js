@@ -1264,6 +1264,8 @@ function customSelect(id, disabled, feature) {
       let createdOption = document.createElement("option");
       createdOption.innerHTML = el;
       createdOption.value = el;
+      createdOption.disabled =
+        metered && (el === "Very Important(5)" || el === "Fairly Important(4)");
       createdSelect.append(createdOption);
     });
   createdSelect.disabled = disabled;
